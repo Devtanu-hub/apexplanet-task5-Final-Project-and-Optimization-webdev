@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stockwell — Everyday goods, chosen carefully</title>
+<meta name="description" content="Stockwell is a general goods catalog — electronics, jewelry, and clothing — built as a fully responsive e-commerce demo with live product data, a working basket, and form validation, using plain HTML, CSS, and JavaScript.">
+<meta name="theme-color" content="#2E4A38">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232E4A38'/%3E%3Ctext x='50' y='70' font-size='58' font-weight='700' fill='%23F1EAD6' text-anchor='middle' font-family='Georgia,serif'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header__row">
+    <a href="#top" class="wordmark">Stockwell</a>
+
+    <nav class="site-nav" id="siteNav">
+      <a href="#catalog">Catalog</a>
+      <a href="#how">How it works</a>
+      <a href="#story">Story</a>
+      <a href="#notes">Notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header__tools">
+      <button class="tool-btn" id="searchToggle" aria-label="Search the catalog">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+      </button>
+      <button class="tool-btn basket-btn" id="basketToggle" aria-label="Open basket">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14l-1.4 10.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 9z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg>
+        <span class="basket-count" id="basketCount">0</span>
+      </button>
+      <button class="tool-btn menu-btn" id="menuToggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12.5" x2="21" y2="12.5"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="wrap">
+      <input type="text" id="searchInput" placeholder="Search the catalog…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero__row">
+    <div class="hero__text">
+      <h1>Stocked well.<br>Priced fair.<br>Shipped fast.</h1>
+      <p>A general catalog of electronics, jewelry, and clothing — chosen carefully and shipped from one place.</p>
+      <a href="#catalog" class="btn btn--stamp">Browse the catalog</a>
+    </div>
+    <div class="hero__seal">
+      <svg class="seal-svg" viewBox="0 0 220 220" fill="none" stroke="currentColor">
+        <circle cx="110" cy="110" r="100" stroke-width="1.5" stroke-dasharray="2 6"/>
+        <circle cx="110" cy="110" r="82" stroke-width="1.5"/>
+        <g stroke-width="1.5">
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(0 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(30 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(60 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(90 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(120 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(150 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(180 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(210 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(240 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(270 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(300 110 110)"/>
+          <line x1="110" y1="20" x2="110" y2="32" transform="rotate(330 110 110)"/>
+        </g>
+        <text x="110" y="102" text-anchor="middle" font-family="Bitter, serif" font-weight="800" font-size="54" fill="currentColor" stroke="none">S</text>
+        <text x="110" y="138" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" letter-spacing="3" fill="currentColor" stroke="none">GENERAL GOODS</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="ledger-strip">
+  <div class="wrap ledger-strip__row">
+    <div class="ledger-fact"><span class="ledger-fact__num mono">500+</span><span class="ledger-fact__label">goods catalogued</span></div>
+    <div class="ledger-fact"><span class="ledger-fact__num mono">24h</span><span class="ledger-fact__label">dispatch on in-stock items</span></div>
+    <div class="ledger-fact"><span class="ledger-fact__num mono">30d</span><span class="ledger-fact__label">returns, no questions asked</span></div>
+  </div>
+</section>
+
+<main>
+
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The catalog</h2>
+        <p>Live stock, pulled fresh — filter by department or search by name.</p>
+      </div>
+
+      <div class="catalog__controls">
+        <div class="tabs" id="categoryTabs"></div>
+        <select id="sortSelect" class="select">
+          <option value="default">Sort: as catalogued</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="rating-desc">Highest rated</option>
+          <option value="name-asc">Name: A–Z</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-note" id="emptyState" hidden>Nothing matches that search. Try another department or term.</p>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num mono">01</span>
+          <h3>Browse</h3>
+          <p>Filter by department, search by name, or sort by price and rating.</p>
+        </li>
+        <li class="step">
+          <span class="step__num mono">02</span>
+          <h3>Basket</h3>
+          <p>Add what you need — quantities and totals update as you go.</p>
+        </li>
+        <li class="step">
+          <span class="step__num mono">03</span>
+          <h3>Checkout</h3>
+          <p>One page, no account required. A confirmation lands in seconds.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap story__row">
+      <div class="story__text">
+        <h2>A shop stocked the old way</h2>
+        <p>Stockwell started as a single shelf of things worth keeping — a good pair of headphones, a watch that lasts, a coat you don't replace next winter. That's still the whole idea.</p>
+        <p>We catalogue what we'd buy ourselves, price it plainly, and ship it from one warehouse instead of a hundred drop-shippers.</p>
+      </div>
+      <div class="story__stat">
+        <span class="story__stat-num mono">1,204</span>
+        <span class="story__stat-label">items catalogued this season</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Notes from customers</h2>
+      </div>
+      <div class="notes__wrap">
+        <button class="note-nav" id="notePrev" aria-label="Previous note">‹</button>
+        <div class="notes__track">
+          <div class="notes__track-inner" id="notesTrackInner"></div>
+        </div>
+        <button class="note-nav" id="noteNext" aria-label="Next note">›</button>
+      </div>
+      <div class="notes__dots" id="notesDots"></div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="wrap newsletter__row">
+      <div>
+        <h2>First access to new stock</h2>
+        <p>One email when new goods are catalogued. No spam, unsubscribe anytime.</p>
+      </div>
+      <form id="newsletterForm" class="line-form">
+        <input type="email" id="newsletterEmail" placeholder="you@email.com" autocomplete="off">
+        <button type="submit" class="btn btn--ink">Sign up</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:36px;">
+        <h2>Get in touch</h2>
+        <p>Questions about an order or the catalog — write in, we reply within a day.</p>
+      </div>
+      <div class="contact__grid">
+        <form id="contactForm" class="ledger-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" autocomplete="off">
+            <span class="field__error" id="nameError"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" autocomplete="off">
+            <span class="field__error" id="emailError"></span>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" autocomplete="off">
+            <span class="field__error" id="subjectError"></span>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4"></textarea>
+            <span class="field__error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn--stamp">Send message</button>
+        </form>
+        <div class="contact__info">
+          <div class="info-line"><span class="info-line__label mono">Address</span><span>142 Market Street, Unit 4</span></div>
+          <div class="info-line"><span class="info-line__label mono">Phone</span><span>+1 (555) 019-2244</span></div>
+          <div class="info-line"><span class="info-line__label mono">Email</span><span>hello@stockwell.shop</span></div>
+          <div class="info-line"><span class="info-line__label mono">Hours</span><span>Mon–Fri, 9am–6pm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer__row">
+    <div class="footer__brand">
+      <span class="wordmark">Stockwell</span>
+      <p>Everyday goods, catalogued and shipped fast.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Shop</h4>
+      <a href="#catalog">Catalog</a>
+      <a href="#how">How it works</a>
+      <a href="#story">Story</a>
+    </div>
+    <div class="footer__col">
+      <h4>Departments</h4>
+      <a href="#catalog" class="cat-link" data-cat="electronics">Electronics</a>
+      <a href="#catalog" class="cat-link" data-cat="jewelery">Jewelery</a>
+      <a href="#catalog" class="cat-link" data-cat="men's clothing">Men's clothing</a>
+      <a href="#catalog" class="cat-link" data-cat="women's clothing">Women's clothing</a>
+    </div>
+    <div class="footer__col">
+      <h4>Elsewhere</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <p>© <span id="year"></span> Stockwell. Built by [Your Name] as a capstone project for the ApexPlanet Software Web Development Internship.</p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="basket" id="basket" aria-label="Shopping basket">
+  <div class="basket__head">
+    <h3>Your basket</h3>
+    <button class="tool-btn" id="basketClose" aria-label="Close basket">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+  <div class="basket__items" id="basketItems"></div>
+  <div class="basket__foot">
+    <div class="basket-total mono"><span>Total</span><span id="basketTotal">$0.00</span></div>
+    <button class="btn btn--stamp btn--block" id="checkoutBtn">Checkout</button>
+    <p class="basket__note">Demo checkout — no payment is processed.</p>
+  </div>
+</aside>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
