@@ -42,12 +42,6 @@ That's it — it opens in your browser at `http://127.0.0.1:5500` (or similar) w
 
 You can also just double-click `index.html` to open it directly in a browser — everything still works, though Live Server is recommended since it auto-refreshes as you edit.
 
-## Before you submit
-
-A few placeholders are worth swapping for your own details:
-- **Footer credit line** (`index.html`, near the bottom) — replace `[Your Name]` with your actual name.
-- **Contact info** in the Contact section (address / phone / email) — currently placeholder values.
-- **Social links** in the footer — currently point to `#`; add your real profiles if you'd like.
 
 Per the internship's submission steps: once you're happy with it, push the three files to a public GitHub repository, record your screen walking through it, and submit both links through **Manage Task** as outlined in the internship deck.
 
